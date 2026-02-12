@@ -1,0 +1,125 @@
+.wellness-tracker {
+    color: var(--text-main);
+}
+
+.tracker-title {
+    font-size: 1.4rem;
+    font-weight: 300;
+    margin-bottom: 25px;
+    color: var(--color-accent-sand);
+}
+
+.tracker-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.tracker-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 8px;
+}
+
+.cat-name {
+    font-size: 1rem;
+    letter-spacing: 1px;
+    color: var(--color-primary-light);
+}
+
+.current-score {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--color-accent-sand);
+}
+
+.current-score small {
+    font-size: 0.8rem;
+    opacity: 0.6;
+}
+
+.wellness-slider {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 100%;
+    background: transparent;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+.wellness-slider::-webkit-slider-thumb {
+    appearance: none;
+    -webkit-appearance: none;
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    background: var(--color-accent-sand);
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    margin-top: -6px; 
+    transition: transform 0.2s;
+}
+
+.wellness-slider:active::-webkit-slider-thumb {
+    transform: scale(1.3);
+}
+
+.wellness-slider::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+}
+
+.progress-bar-container {
+    position: relative;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    overflow: visible; 
+    margin-bottom: 8px;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    background: var(--color-primary-dark);
+    border-radius: 10px;
+    transition: width 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.progress-bar-fill.achieved {
+    background: linear-gradient(90deg, var(--color-primary-dark), var(--color-primary-light));
+    box-shadow: 0 0 8px var(--color-primary-light);
+}
+
+.target-marker {
+    position: absolute;
+    top: -4px;
+    width: 2px;
+    height: 12px;
+    background: var(--color-accent-earth);
+    opacity: 0.6;
+}
+
+.target-footer {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.75rem;
+    color: var(--color-accent-earth);
+    cursor: pointer;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
+
+.target-footer:hover {
+    opacity: 1;
+    color: var(--color-accent-sand);
+}
+
+.edit-target {
+    font-size: 0.7rem;
+    cursor: pointer;
+    margin-left: 5px;
+    color: var(--color-accent-sand)
+}
