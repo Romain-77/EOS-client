@@ -76,7 +76,7 @@ const WellnessTracker = ({ stats, onStatsChange }: WellnessTrackerProps) => {
                                     max="10"
                                     value={current}
                                     onChange={(e) => handleSliderChange(cat.id, parseInt(e.target.value))} 
-                                    className="slider"
+                                    className="wellness-slider"
                                 />
                             </div>
 
