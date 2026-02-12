@@ -21,7 +21,7 @@ const Home = () => {
         const [fetchedNotes, fetchedStats, fetchedHistory] = await Promise.all([
           getNotes(),
           getDailyStats(),
-          getStatsHistory(30)
+          getStatsHistory(7)
         ]);
         setNotes(fetchedNotes);
         setStats(fetchedStats);
@@ -91,7 +91,7 @@ const Home = () => {
             </section>
 
             {history.length > 0 && (
-              <section className="chart-section-wrappe">
+              <section className="chart-section-wrapper">
                 <WellnessChart rawData={history} />
               </section> 
             )}
