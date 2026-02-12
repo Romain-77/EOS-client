@@ -1,6 +1,5 @@
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from "recharts";
-import { computeBarRectangles } from "recharts/types/cartesian/Bar";
-
+import "./WellnessChart.css"
 
 interface HistoryData {
     DATE: string;
@@ -35,14 +34,14 @@ const WellnessChart = ({ rawData }: {rawData: HistoryData[]}) => {
   });
 
     const categories = Array.from(new Set(rawData.map(item => item.category)));
-    const colors = ["#FEB780", "#FB756C", "#7D8EA8", "#579393"];
+    const colors = ["#4B0082", "#CCCCFF", "#E6E6FA", "#007BA7"];
 
 return (
     <section className="chart-section">
-        <h3 className="chart-title">Évolution sur les 30 derniers jours</h3>
+        <h3 className="chart-title-unique">Évolution sur les 7 derniers jours</h3>
         <div className="chart-wrapper">
             <ResponsiveContainer width="100%" height={400}>
-                <LineChart data={sortedData} margin={{ top: 20, right: 30, left: 0, bottom: 0 }}>
+                <LineChart data={sortedData} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
                     <CartesianGrid 
                     strokeDasharray="3 3" 
                     vertical={false}
@@ -73,7 +72,7 @@ return (
                     verticalAlign="top" 
                     height={45}
                     iconType="circle"
-                    wrapperStyle={{ paddingTop: '0px' }}
+                    wrapperStyle={{ paddingTop: '0px', paddingBottom: '20px'}}
                     />
                     {categories.map((cat, index) => (
                         <Line 
@@ -82,7 +81,7 @@ return (
                             dataKey={cat} 
                             stroke={colors[index % colors.length]} 
                             strokeWidth={3}
-                            dot={{ r: 4, fill: colors[index % colors.length], strokeWidth: 2, stroke: '#A95862' }}
+                            dot={{ r: 4, fill: colors[index % colors.length], strokeWidth: 1}}
                             activeDot={{ r: 6, strokeWidth: 0 }}
                             connectNulls
                             strokeOpacity={0.9}

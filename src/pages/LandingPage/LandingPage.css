@@ -1,44 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;1,400&family=Playfair+Display:wght@400;600&display=swap');
+
 .landing-page {
+    position: relative;
     min-height: 100vh;
+    overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--bg-site); 
-    background: radial-gradient(circle at center, #0b0e3f 0%, var(--bg-site) 100%);
+    background: radial-gradient(circle at bottom, var(--color-accent-sun) 0%, var(--bg-site) 100%);
 }
 
 .landing-container {
     width: 100%;
-    max-width: 450px;
+    max-width: 600px;
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
     animation: fadeIn 1s ease-out;
 }
 
 .logo-title {
-    font-size: 3.5rem;
-    font-weight: 200;
-    margin-bottom: 0.5rem;
+    font-family: 'Playfair Display', serif;
+    font-size: 10rem;
+    font-weight: bold;
+    margin-bottom: 5rem;
     color: var(--color-accent-sun);
-    letter-spacing: 0.5rem;
-}
-
-.sub-title {
-    font-size: 1.1rem;
-    font-weight: 300;
-    color: var(--color-accent-sun);
-    margin-bottom: 3rem;
-    line-height: 1.6;
+    letter-spacing: 1.5rem;
+    text-transform: uppercase;
+    text-shadow: 0 0 20px rgba(205, 34, 34, 0.307),
+                0 0 40px rgba(186, 56, 82, 0.233);
 }
 
 .auth-box {
-    background: var(--bg-card);
-    backdrop-filter: blur(12px); 
-    -webkit-backdrop-filter: blur(12px);
+    background: rgba(229, 216, 149, 0.176);
+    backdrop-filter: blur(10px); 
+    -webkit-backdrop-filter: blur(20px);
+    width: 75%;
     border: var(--glass-border);
     border-radius: 24px; 
     padding: 40px;
-    box-shadow: var(--shadow-soft);
+    box-shadow: var(--color-neutral-earth);
 }
 
 @keyframes fadeIn {

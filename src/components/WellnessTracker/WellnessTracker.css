@@ -3,10 +3,11 @@
 }
 
 .tracker-title {
-    font-size: 1.4rem;
+    font-size: 2rem;
+    text-align: center;
     font-weight: 300;
     margin-bottom: 25px;
-    color: var(--color-accent-sun);
+    color: var(--color-secondary);
 }
 
 .tracker-grid {
@@ -23,10 +24,10 @@
 }
 
 .cat-name {
-    font-size: 1rem;
+    font-size: 1.5rem;
     letter-spacing: 1px;
-    color: var(--color-accent-sun);
-    font-weight: 400;
+    color: var(--color-secondary);
+    font-weight: bold;
 }
 
 .current-score {
@@ -119,6 +120,11 @@
 .target-footer:hover {
     opacity: 1;
     color: var(--color-accent-sun);
+}
+
+.target-text {
+    font-size: 0.9rem;
+    color: var(--color-secondary);
 }
 
 .edit-target {

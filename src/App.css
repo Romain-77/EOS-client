@@ -1,16 +1,21 @@
 :root {
   --color-primary-light: #579393;
   --color-primary-dark: #7D8EA8;
-  --color-accent-sun: #FEB780;
+  --color-secondary: #014F4E;
+  --color-accent-sun: #FBE99BEC;
   --color-accent-orange: #FB756C;
-  --color-neutral-earth: #A95862;
+  --color-neutral-earth: #B23F3FCF;
 
+  --text-title: #FFD580;
+  --text-accent: var(--color-accent-sun);
+  --text-main: #FFFFFF;
+  --text-secondary: rgba(255, 255, 255, 0.85);
+  
   --bg-site: var(--color-neutral-earth);
-  --bg-card: rgba(255, 255, 255, 0.08);
-  --text-main: #f4f1ea;
+  --bg-card: rgba(255, 255, 255, 0.12);
+  --glass-border: 1px solid rgba(2255, 255, 255, 0.2);
+  --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.2);
 
-  --glass-border: 1px solid rgba(255, 255, 255, 0.2);
-  --shadow-soft: 0 8px 32px 0 rgba(125, 142, 168, 0.2);
   --gradient-pop: radial-gradient(circle at 30% 30%, var(--color-accent-sun), var(--color-accent-orange));
 }
 
@@ -18,16 +23,11 @@ body {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  background: linear-gradient(180deg, var(--color-primary-dark) 0%, var(--color-neutral-earth) 100%);
+  background: radial-gradient(circle at top right, var(--color-primary-light) 0%, var(--color-neutral-earth) 60%, #1a0b0b 100%);
   background-attachment: fixed;
   color: var(--text-main);
-  font-family: "Lato", sans-serif;
+  font-family: "Lora", sans-serif;
   min-height: 100vh;
-}
-
-h1, h2, h3 {
-  color: var(--color-accent-sun);
-  letter-spacing: 2px;
 }
 
 button {

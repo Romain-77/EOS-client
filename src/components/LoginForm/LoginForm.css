@@ -1,14 +1,35 @@
 .auth-form {
     display: flex;
     flex-direction: column;
-    gap: 20px; 
+    align-items: center;
 }
 
 .auth-form h2 {
-    margin-bottom: 10px;
-    font-size: 1.8rem;
-    font-weight: 300;
-    color: var(--color-accent-sun);
+    margin-bottom: 30px;
+    font-size: 1.9rem;
+    font-weight: 400;
+    color: var(--color-secondary);
+}
+
+.auth-form h3 {
+    font-size: 1.5rem;
+    font-weight: 450;
+    color: var(--color-secondary);
+}
+
+.auth-form p {
+    color: var(--color-secondary);
+}
+
+.auth-form .input-title {
+    align-self: flex-start; 
+    text-align: left;
+    margin-left: 5px; 
+    margin-bottom: 8px;
+    margin-top: 15px;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--color-secondary);
 }
 
 .auth-form input {
@@ -16,14 +37,20 @@
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 12px;
     padding: 14px 18px;
-    color: white;
+    color: var(--color-secondary);
     font-size: 1rem;
     transition: all 0.3s ease;
     outline: none;
 }
 
+.auth-form input, 
+.auth-form button {
+    width: 100%; 
+    box-sizing: border-box;
+}
+
 .auth-form input::placeholder {
-    color: rgba(130, 161, 166, 0.5);
+    color: var(--color-accent-sun);
 }
 
 .auth-form input:focus {
@@ -33,16 +60,16 @@
 }
 
 .auth-form button[type="submit"] {
-    background: linear-gradient(135deg, var(--color-accent-orange), var(--color-accent-sun));
+    background: var(--color-primary-light);
     color: white;
     border: none;
     font-weight: 600;
-    box-shadow: 0 4px 15px rgba(251, 117, 108, 0.4);
+    /* box-shadow: 0 4px 15px rgba(237, 235, 235, 0.4); */
     border-radius: 12px;
     padding: 15px;
     font-size: 1rem;
     letter-spacing: 1px;
-    margin-top: 10px;
+    margin-top: 30px;
 }
 
 .auth-form button[type="submit"]:hover {
@@ -56,13 +83,14 @@
 
 .switch-link {
     font-size: 0.9rem;
-    color: var(--color-primary-light);
+    color: var(--color-secondary);
     cursor: pointer;
-    text-decoration: underline rgba(130, 161, 166, 0.3);
+    text-decoration: underline var(--color-secondary);
     transition: color 0.3s ease;
     margin-top: 10px;
 }
 
 .switch-link:hover {
-    color: var(--color-accent-sun);
+    color: var(--color-neutral-earth);
+    text-decoration: underline var(--color-neutral-earth);
 }
