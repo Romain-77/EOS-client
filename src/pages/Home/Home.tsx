@@ -73,12 +73,10 @@ const Home = () => {
     return (
       <div className="home-page">
         <header className="home-header">
-          <div className="tracker-card">
-            <div className="brand">
+          <div className="header-content">
               <h1 className="logo-small">E O S</h1>
               <p className="welcome-text">Bienvenue, {user?.username}</p>
-            </div>
-            <button className="logout-btn" onClick={logout}>Déconnexion</button>
+              <button className="logout-btn" onClick={logout}>Déconnexion</button>
             </div>
           </header>
 

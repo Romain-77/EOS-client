@@ -8,7 +8,7 @@
     margin-bottom: 10px;
     font-size: 1.8rem;
     font-weight: 300;
-    color: var(--color-accent-sand);
+    color: var(--color-accent-sun);
 }
 
 .auth-form input {
@@ -23,7 +23,7 @@
 }
 
 .auth-form input::placeholder {
-    color: rgba(130, 161, 166, 0.5);
+    color: rgba(166, 148, 130, 0.5);
 }
 
 .auth-form input:focus {
@@ -57,13 +57,13 @@
 
 .switch-link {
     font-size: 0.9rem;
-    color: var(--color-primary-light);
+    color: var(--color-accent-sun);
     cursor: pointer;
-    text-decoration: underline rgba(130, 161, 166, 0.3);
+    text-decoration: underline var(--color-accent-sun);
     transition: color 0.3s ease;
     margin-top: 10px;
 }
 
 .switch-link:hover {
-    color: var(--color-accent-sand);
+    color: var(--color-primary-light);
 }

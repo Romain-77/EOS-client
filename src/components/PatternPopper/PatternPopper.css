@@ -14,7 +14,7 @@
     font-weight: 300;
     letter-spacing: 4px;
     margin-bottom: 20px;
-    color: var(--color-accent-sand);
+    color: var(--color-accent-sun);
     text-transform: uppercase;
 }
 
@@ -36,13 +36,12 @@
 }
 
 .bubble.alive {
-    background: var(--gradient-pop);
+background: var(--gradient-pop);
     box-shadow: 
-        inset -3px -3px 6px rgba(0, 0, 0, 0.3),
-        inset 3px 3px 6px rgba(255, 255, 255, 0.1),
-        0 4px 10px rgba(40, 80, 76, 0.4);
+        inset -2px -2px 6px rgba(0, 0, 0, 0.1),
+        inset 2px 2px 6px rgba(255, 255, 255, 0.4),
+        0 4px 10px rgba(169, 88, 98, 0.3);
 }
-
 .bubble.alive:hover {
     transform: scale(1.1);
     filter: brightness(1.15);
@@ -68,14 +67,9 @@
     border-radius: 50%;
     transform: translate(-50%, -50%);
     box-shadow: 
-        0 -15px 0 -2px var(--color-primary-light), 
-        12px -12px 0 -3px var(--color-accent-sand), 
-        15px 0 0 -2px var(--color-primary-light), 
-        12px 12px 0 -3px var(--color-accent-sand), 
-        0 15px 0 -2px var(--color-primary-light), 
-        -12px 12px 0 -3px var(--color-accent-sand), 
-        -15px 0 0 -2px var(--color-primary-light), 
-        -12px -12px 0 -3px var(--color-accent-sand);
+        0 -15px 0 -2px white, 
+        12px -12px 0 -3px var(--color-accent-sun), 
+        15px 0 0 -2px white;
     animation: splash-explosion 0.4s ease-out forwards;
 }
 
@@ -100,15 +94,16 @@
 .affirmations p {
     font-style: italic;
     font-size: 1rem;
+    font-weight: bold;
     line-height: 1.5;
-    color: var(--color-primary-light);
+    color: white;
     margin-bottom: 20px;
 }
 
 .reset-btn {
     background: transparent;
-    border: 1px solid var(--color-accent-sand);
-    color: var(--color-accent-sand);
+    border: 1px solid var(--color-accent-sun);
+    color: var(--color-accent-sun);
     padding: 8px 20px;
     border-radius: 30px;
     font-size: 0.9rem;
@@ -116,8 +111,8 @@
 }
 
 .reset-btn:hover {
-    background: var(--color-accent-sand);
-    color: var(--color-neutral-black);
+    background: var(--color-accent-sun);
+    color: var(--color-neutral-earth);
 }
 
 @keyframes fadeIn {

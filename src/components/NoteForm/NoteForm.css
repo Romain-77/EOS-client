@@ -13,6 +13,15 @@
     gap: 20px;
 }
 
+.note-select {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.note-select option {
+    background-color: var(--color-neutral-earth); 
+    color: white;
+}
+
 .form-header {
     display: flex;
     justify-content: space-between;
@@ -24,7 +33,7 @@
     font-size: 1.4rem;
     font-weight: 300;
     margin: 0;
-    color: var(--color-accent-sand);
+    color: var(--color-accent-sun);
 }
 
 .input-group {
@@ -33,29 +42,41 @@
     gap: 15px;
 }
 
-.note-input-title, .note-select, .note-textarea {
-    background: rgba(255, 255, 255, 0.03);
-    border: none;
-    border-bottom: 1px solid rgba(130, 161, 166, 0.2);
-    border-radius: 15px;
-    padding: 12px 15px;
-    color: var(--text-main);
-    font-family: inherit;
-    transition: all 0.4s ease;
+.note-input-title::placeholder, 
+.note-textarea::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+    font-weight: 300;
 }
 
-.note-input-title:focus, .note-select:focus, .note-textarea:focus {
+.note-input-title, .note-select, .note-textarea {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    padding: 14px 18px;
+    color: white;
+    font-family: inherit;
+    transition: all 0.4s ease;
+    outline: none;
+}
+
+.note-input-title:focus, .note-select:focus{
     outline: none;
     background: rgba(255, 255, 255, 0.06);
-    border-bottom-color: var(--color-primary-light);
+    border-color: var(--color-accent-orange) ;
+}
+.note-textarea:focus {
+    border-color: var(--color-accent-orange);
+    background: rgba(255, 255, 255, 0.15);
 }
 
 .note-textarea {
-    min-height: 120px;
+min-height: 120px;
     resize: vertical;
-    border: 1px solid rgba(130, 161, 166, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1); 
     border-radius: 12px;
     line-height: 1.6;
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
 }
 
 .note-form-footer {
@@ -63,8 +84,15 @@
     justify-content: flex-end;
 }
 
+.note-form-btns {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 10px;
+}
+
 .submit-note-btn {
-    background: var(--color-primary-dark);
+    background: linear-gradient(135deg, var(--color-accent-orange), var(--color-accent-sun));
+    box-shadow: 0 4px 15px rgba(251, 117, 108, 0.4);
     color: white;
     border: none;
     padding: 12px 25px;
@@ -75,15 +103,14 @@
 }
 
 .submit-note-btn:hover {
-    background: var(--color-primary-light);
-    transform: scale(1.02);
-    box-shadow: 0 5px 15px rgba(130, 161, 166, 0.2);
+    transform: translateY(-2px);
+    filter: brightness(1.2);
 }
 
 .cancel-pill {
     background: transparent;
-    border: 1px solid var(--color-accent-earth);
-    color: var(--color-accent-earth);
+    border: 1px solid var(--color-accent-orange);
+    color: var(--color-accent-orange);
     padding: 5px 15px;
     border-radius: 20px;
     font-size: 0.8rem;
