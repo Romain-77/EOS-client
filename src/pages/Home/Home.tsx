@@ -1,11 +1,14 @@
 import { useEffect, useState } from "react";
 import { deleteNote, getDailyStats, getNotes, getStatsHistory } from "../../services/api";
 import type { CategoryWithStats, Note } from "../../interfaces/types";
+import { motion } from "framer-motion";
+import { useAuth } from "../../contexts/AuthContext";
+import logoEOS from "../../assets/logo/logo-EOS.png";
 import NoteForm from "../../components/NoteForm/NoteForm";
+import PatternPopper from "../../components/PatternPopper/PatternPopper";
+import ScrollReveal from "../../components/ScrollReveal/ScrollReveal";
 import WellnessTracker from "../../components/WellnessTracker/WellnessTracker";
 import WellnessChart from "../../components/WellnessChart/WellnessChart";
-import { useAuth } from "../../contexts/AuthContext";
-import PatternPopper from "../../components/PatternPopper/PatternPopper";
 import "./Home.css";
 
 const Home = () => {
@@ -46,11 +49,15 @@ const Home = () => {
     if (!user) {
       return null;
     }
-    const filteredNotes = notes.filter(note => {
-    if (selectedCategory === "all") 
-    return true;
-    return note.categoryId?.toString() === selectedCategory?.toString();
-});
+ const filteredNotes = notes
+    .filter(note => {
+        if (selectedCategory === "all") return true;
+        return note.categoryId?.toString() === selectedCategory?.toString();
+    })
+    .sort((a, b) => {
+        return new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime();
+    });
+
 
 
     const handleEdit = (note : Note) => {
@@ -74,7 +81,9 @@ const Home = () => {
       <div className="home-page">
         <header className="home-header">
           <div className="header-content">
-              <h1 className="logo-small">E O S</h1>
+            <div className="logo-container">
+              <img src={logoEOS} alt="EOS logo" className="logo-img" />
+            </div>
               <p className="welcome-text">Bienvenue, {user?.username}</p>
               <button className="logout-btn" onClick={logout}>Déconnexion</button>
             </div>
@@ -88,43 +97,60 @@ const Home = () => {
                 <div className="mini-games">
                   <PatternPopper />
                 </div>
+                <div className="scroll-indicator">
+                   {/* <span>Explorer le journal</span> */}
+                    <div className="mouse">
+                      <div className="wheel"></div>
+                    </div>
+                </div>
             </section>
 
             {history.length > 0 && (
-              <section className="chart-section-wrapper">
-                <WellnessChart rawData={history} />
-              </section> 
+              <ScrollReveal>
+                <section className="chart-section-wrapper">
+                  <WellnessChart rawData={history} />
+                </section> 
+              </ScrollReveal>
             )}
 
             <section className="notes-section">
-              <div className="notes-header">
-                <h2>Journal de bord</h2>
-                  <div className="filter-bar">
-                    <select
-                      id="category-filter"
-                      value={selectedCategory}
-                      onChange={(e) => setSelectedCategory(e.target.value)}
-                    >
-                      <option value="all">Toutes les pensées</option>
-                      {stats.map((cat, index) => (
-                          <option key={`filter-cat-${cat.id}-${index}`} value={cat.id}>{cat.name}</option>
-                      ))}
-                    </select>
-                  </div>
-                </div> 
-
+              <ScrollReveal>
                 <NoteForm 
                 onNoteAdded={loadAllData} 
                 editingNote={editingNote} 
                 onCancelEdit={() => setEditingNote(null)}
                 />
-                
+                  <div className="filter-bar">
+                    <select
+                      id="category-filter"
+                      value={selectedCategory}
+                      onChange={(e) => setSelectedCategory(e.target.value)}
+                      >
+                      <option value="all">Toutes les pensées</option>
+                      {stats.map((cat, index) => (
+                        <option key={`filter-cat-${cat.id}-${index}`} value={cat.id}>{cat.name}</option>
+                      ))}
+                    </select>
+                  </div>
+                </ScrollReveal>
+
                 <div className="notes-grid">
                   {filteredNotes.length === 0 ? (
                     <p className="no-notes">Aucune note dans cette catégorie.</p>
                   ) : (
-                    filteredNotes.map((note) => (
-                      <article key={`note-card-${note.id}`} className="note-card">
+                    filteredNotes.map((note, index) => (
+                      <motion.article 
+                      key={`note-card-${note.id}`} 
+                      className="note-card"
+                      initial={{opacity: 0, y: 30}}
+                      whileInView={{opacity: 1, y: 0}}
+                      viewport={{once: false, amount: 0.1}}
+                      transition={{
+                        duration: 0.6,
+                        delay: index * 0.1,
+                        ease: "easeOut"
+                      }}
+                      >
                         <div className="note-header">
                             <span className="category-badge">{note.categoryName}</span>
                             <span className="note-date">
@@ -137,7 +163,7 @@ const Home = () => {
                           <button className="edit-btn" onClick={() => handleEdit(note)}>Modifier</button>
                           <button className="delete-btn" onClick={() => handleDelete(note.id)}>Supprimer</button>
                         </div>
-                      </article>
+                      </motion.article>
                     ))
                   )}
                 </div>

@@ -58,7 +58,7 @@ const handleSubmit = async (e: React.BaseSyntheticEvent) => {
     return (
         <section className="note-form-container">
              <form onSubmit={handleSubmit} className="note-form">
-                <div className="from-header">
+                <div className="form-header">
                     <h2>{editingNote ? "Modifier la pensée" : "Nouvelle pensée"}</h2>
                     {editingNote && (
                         <button type="button" className="cancel-btn" onClick={onCancelEdit}>

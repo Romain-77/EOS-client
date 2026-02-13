@@ -13,7 +13,6 @@ const LandingPage = () => {
             <div className="landing-container">
                 <header className="landing-info">
                     <h1 className="logo-title">E O S</h1>
-                    {/* <h3 className="sub-title">Maîtrisez votre quotidien et votre bien-être</h3> */}
                 </header>
             
                 <main className="auth-box">

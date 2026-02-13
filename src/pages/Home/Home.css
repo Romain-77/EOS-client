@@ -1,5 +1,5 @@
 .home-page {
-    background: var(--bg-site);
+    background: var(--bg-home);
     min-height: 100vh;
 }
 
@@ -24,7 +24,7 @@
     height: 80px;
 }
 
-.logo-small {
+/* .logo-small {
     font-family: 'Playfair Display', serif;
     font-size: 2rem;
     font-weight: bold;
@@ -33,6 +33,18 @@
     color: var(--color-accent-sun);
     text-shadow: 0 0 15px rgba(254, 183, 128, 0.3);
     min-width: 120px;
+} */
+
+.logo-container {
+    min-width: 120px;
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    height: 90px;
+    width: auto;
+    object-fit: contain;
 }
 
 .welcome-text {
@@ -45,6 +57,25 @@
     color: var(--color-secondary);
     white-space: nowrap;
 }
+
+.logout-btn {
+    margin-left: 0;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--color-secondary);
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    transition: all 0.3s ease;
+    z-index: 2;
+}
+
+.logout-btn:hover {
+    background: var(--color-neutral-earth);
+    border-color: var(--color-neutral-earth);
+    color: var(--color-accent-sun);
+}
+
 
 .home-container {
     max-width: 1200px;
@@ -69,6 +100,60 @@
     box-shadow: var(--shadow-soft);
 }
 
+.scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    opacity: 0.8;
+    color: var(--color-accent-sun);
+    pointer-events: none;
+    animation: fadeInOut 3s infinite ease-in-out;
+}
+
+@keyframes fadeInOut {
+    0%, 100% { opacity: 0.4; transform: translate(-50%, 0); }
+    50% { opacity: 0.9; transform: translate(-50%, 5px); }
+}
+
+/* .scroll-indicator span {
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 400;
+    text-shadow: 0 0 15px rgba(251, 233, 155, 0.2);;
+} */
+
+.mouse {
+    width: 20px;
+    height: 40px;
+    border: 2px solid var(--color-accent-sun);
+    border-radius: 20px;
+    position: relative;
+    box-shadow: 0 0 15px rgba(251, 233, 155, 0.2);
+}
+
+.wheel {
+    width: 3px;
+    height: 10px;
+    background-color: var(--color-accent-sun);
+    border-radius: 2px;
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: scrollWheel 1.5s infinite ease-in-out;
+}
+
+@keyframes scrollWheel {
+    0% { opacity: 1; top: 8px; }
+    100% { opacity: 0; top: 20px;}
+}
+
 .notes-header {
     display: flex;
     justify-content: space-between;
@@ -89,6 +174,10 @@
     flex-direction: column;
 }
 
+.note-card h3 {
+    color: var(--color-secondary);
+}
+
 .note-card:hover {
     transform: translateY(-5px);
     border-color: var(--color-accent-sun);
@@ -99,6 +188,11 @@
     justify-content: space-between;
     font-size: 0.75rem;
     margin-bottom: 15px;
+}
+
+.filter-bar select{
+    background: var(--bg-card);
+    border: var(--glass-border);
 }
 
 .category-badge {
@@ -127,24 +221,6 @@
     flex-grow: 1;
 }
 
-.logout-btn {
-    margin-left: 0;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    color: var(--text-main);
-    padding: 8px 20px;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    transition: all 0.3s ease;
-    z-index: 2;
-}
-
-.logout-btn:hover {
-    background: var(--color-accent-orange);
-    border-color: var(--color-accent-orange);
-    color: white;
-}
-
 .actions-btns {
     display: flex;
     gap: 10px;
@@ -152,25 +228,26 @@
 }
 
 .edit-btn, .delete-btn {
-    padding: 6px 12px;
-    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--color-secondary);
+    padding: 8px 20px;
+    border-radius: 20px;
     font-size: 0.8rem;
-    border: none;
+    transition: all 0.3s ease;
 }
 
-.edit-btn { 
-    background: var(--color-primary-dark); 
-    color: white; 
-}
-.delete-btn { 
-    background: rgba(251, 117, 108, 0.15);
-    color: var(--color-accent-orange); 
-    border: 1px solid var(--color-accent-orange);
+.edit-btn:hover {
+    background: linear-gradient(135deg, var(--color-primary-light), var(--color-secondary));
+    border: var(--color-primary-dark);
+    color: white;
+
 }
 
 .delete-btn:hover {
-    background: var(--color-accent-orange);
-    color: white;
+    background:linear-gradient(135deg, var(--color-accent-orange), var(--color-neutral-earth));
+    border-color: var(--color-accent-orange);
+    color: var(--color-accent-sun);
 }
 
 select {
