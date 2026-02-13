@@ -48,7 +48,7 @@ const PatternPopper = () => {
 
     return (
         <div className="popper-container">
-            <h3>POP IT</h3>
+            <h3>Zen Bubbles</h3>
             <div className="bubble-grid">
                 {bubbles.map((isAlive,i ) => (
                     <div 

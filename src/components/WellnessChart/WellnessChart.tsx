@@ -34,7 +34,7 @@ const WellnessChart = ({ rawData }: {rawData: HistoryData[]}) => {
   });
 
     const categories = Array.from(new Set(rawData.map(item => item.category)));
-    const colors = ["#4B0082", "#CCCCFF", "#E6E6FA", "#007BA7"];
+    const colors = ["#005782ff", "#6161eaff", "#E6E6FA", "#007BA7"];
 
 return (
     <section className="chart-section">
@@ -69,10 +69,10 @@ return (
                         itemStyle={{ color: '#f4f1ea' }}
                     />
                     <Legend 
-                    verticalAlign="top" 
+                    verticalAlign="bottom" 
                     height={45}
                     iconType="circle"
-                    wrapperStyle={{ paddingTop: '0px', paddingBottom: '20px'}}
+                    wrapperStyle={{ paddingTop: '50px', paddingBottom: '10px'}}
                     />
                     {categories.map((cat, index) => (
                         <Line 

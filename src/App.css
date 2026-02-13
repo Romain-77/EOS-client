@@ -12,9 +12,10 @@
   --text-secondary: rgba(255, 255, 255, 0.85);
   
   --bg-site: var(--color-neutral-earth);
-  --bg-card: rgba(255, 255, 255, 0.12);
-  --glass-border: 1px solid rgba(2255, 255, 255, 0.2);
-  --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.2);
+  --bg-home: #b76641cf;
+  --bg-card: rgba(200, 176, 155, 0.178);
+  --glass-border: 1px solid rgba(2255, 255, 255, 0.1);
+  --shadow-soft: 0 10px 30px rgba(213, 205, 205, 0.179);
 
   --gradient-pop: radial-gradient(circle at 30% 30%, var(--color-accent-sun), var(--color-accent-orange));
 }

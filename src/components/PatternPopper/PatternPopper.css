@@ -10,12 +10,11 @@
 }
 
 .popper-container h3 {
-    font-size: 1.2rem;
+    font-size: 1.7rem;
+    text-align: center;
     font-weight: 300;
-    letter-spacing: 4px;
-    margin-bottom: 20px;
-    color: var(--color-accent-sun);
-    text-transform: uppercase;
+    margin-bottom: 25px;
+    color: var(--color-secondary);
 }
 
 .bubble-grid {

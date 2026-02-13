@@ -69,9 +69,8 @@
 
 .recharts-legend-item-text {
     color: #f4f1ea;
-    font-size: 0.9rem;
-    font-weight: 400;
-    opacity: 0.9;
+    font-size: 1.2rem;
+    font-weight: 900;
     margin-left: 8px;
     text-transform: capitalize;
 }
