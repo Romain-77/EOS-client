@@ -25,12 +25,12 @@
     font-family: 'Playfair Display', serif;
     font-size: 10rem;
     font-weight: bold;
-    margin-bottom: 5rem;
     color: var(--color-accent-sun);
     letter-spacing: 1.5rem;
     text-transform: uppercase;
     text-shadow: 0 0 20px rgba(205, 34, 34, 0.307),
                 0 0 40px rgba(186, 56, 82, 0.233);
+     
 }
 
 .auth-box {

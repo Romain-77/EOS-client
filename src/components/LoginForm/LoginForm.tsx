@@ -4,9 +4,10 @@ import "./LoginForm.css";
 
 interface LoginFormProps {
     onSwitch: () => void;
+    onForgot?: () => void;
 }
 
-const LoginForm = ({ onSwitch }: LoginFormProps) => {
+const LoginForm = ({ onSwitch, onForgot }: LoginFormProps) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const { login } = useAuth();
@@ -31,6 +32,9 @@ const LoginForm = ({ onSwitch }: LoginFormProps) => {
             <input type="password" value={password} onChange={(e) => setPassword(e.target.value)}required />
             <button type="submit">Se connecter</button>
             <p>Pas encore inscrit ? <span className="switch-link" onClick={onSwitch}>S'insrire</span></p>
+            <p onClick={onForgot} className="forgot-link">
+                    Mot de passe oublié ?
+                </p>
         </form>
     );
 };

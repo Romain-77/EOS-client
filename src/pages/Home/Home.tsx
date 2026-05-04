@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { use, useEffect, useState } from "react";
 import { deleteNote, getDailyStats, getNotes, getStatsHistory } from "../../services/api";
 import type { CategoryWithStats, Note } from "../../interfaces/types";
 import { motion } from "framer-motion";
@@ -18,6 +18,21 @@ const Home = () => {
     const [selectedCategory, setSelectedCategory] = useState<string>("all");
     const [editingNote, setEditingNote] = useState<Note | null>(null);
     const { user, logout, loading } = useAuth();
+    const [showScrollIndicator, setShowScrollIndicator] = useState(true);
+
+    useEffect(() => {
+      const handleScroll = () => {
+        if (window.scrollY > 50) {
+          setShowScrollIndicator(false);
+          window.removeEventListener("scroll", handleScroll);
+        } else {
+          setShowScrollIndicator(true);
+        }
+      };
+   
+      window.addEventListener("scroll", handleScroll);
+      return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
 
     const loadAllData = async () => {
       try {
@@ -77,6 +92,7 @@ const Home = () => {
     };
 
 
+
     return (
       <div className="home-page">
         <header className="home-header">
@@ -97,12 +113,17 @@ const Home = () => {
                 <div className="mini-games">
                   <PatternPopper />
                 </div>
-                <div className="scroll-indicator">
-                   {/* <span>Explorer le journal</span> */}
+               <motion.div 
+    className="scroll-indicator"
+    initial={{ opacity: 1 }}
+    animate={{ opacity: showScrollIndicator ? 1 : 0, y: showScrollIndicator ? 0 : 20 }}
+    transition={{ duration: 0.4 }}
+    style={{ pointerEvents: showScrollIndicator ? 'auto' : 'none' }} // Évite de bloquer les clics si invisible
+>
                     <div className="mouse">
                       <div className="wheel"></div>
                     </div>
-                </div>
+                </motion.div>
             </section>
 
             {history.length > 0 && (

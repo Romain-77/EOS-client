@@ -1,11 +1,12 @@
 import { useState } from "react";
 import LoginForm from "../../components/LoginForm/LoginForm";
 import FloatingWords from "../../components/FloatingWords/FloatingWords";
+import ForgotPasswordForm from "../../components/ForgotPasswordForm/ForgotPasswordForm";
 import RegisterForm from "../../components/RegisterForm/RegisterForm";
 import "./LandingPage.css";
 
 const LandingPage = () => {
-    const [isLogin, setIsLogin] = useState(true);
+    const [view, setView] = useState<"login" | "register" | "forgot">("login");
 
     return (
         <div className="landing-page">
@@ -16,10 +17,17 @@ const LandingPage = () => {
                 </header>
             
                 <main className="auth-box">
-                    {isLogin ? (
-                         <LoginForm onSwitch={() => setIsLogin(false)}/>
-                    ) : (
-                        <RegisterForm onSwitch={() => setIsLogin(true)}/>
+                    {view === "login" && (
+                         <LoginForm 
+                         onSwitch={() => setView("register")}
+                         onForgot={() => setView("forgot")}
+                            />
+                    )}
+                    {view === "register" && (
+                        <RegisterForm onSwitch={() => setView("login")} />
+                    )}
+                    {view === "forgot" && (
+                        <ForgotPasswordForm onSwitch={() => setView("login")} />
                     )}
                 </main>
             </div>

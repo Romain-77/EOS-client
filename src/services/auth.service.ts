@@ -25,4 +25,14 @@ const logout = async () => {
     return response.data;
 }
 
-export default { login, register, getCurrentUser, logout };
+const forgotPassword = async (email: string) => {
+    const response = await api.post('/users/forgot-password', { email });
+    return response.data;
+}
+
+const resetPassword = async (token: string, newPassword: string) => {
+    const response = await api.post('/users/reset-password', { token, newPassword });
+    return response.data;
+}
+
+export default { login, register, getCurrentUser, logout, forgotPassword, resetPassword };
