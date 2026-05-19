@@ -1,0 +1,115 @@
+/* BreathingModal.css */
+
+.breathing-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.6); /* Fond plus sombre pour focus */
+    backdrop-filter: blur(8px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.breathing-card {
+    background: var(--bg-card);
+    border: var(--glass-border);
+    border-radius: 20px;
+    padding: 30px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: var(--shadow-soft);
+    position: relative; /* INDISPENSABLE pour que ses enfants absolute soient par rapport à lui */
+}
+
+/* Style pour le bouton "X" de fermeture (raccord avec l'image) */
+.close-button {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    color: var(--color-accent-orange);
+    font-size: 1.2rem;
+    cursor: pointer;
+    z-index: 10;
+}
+
+/* Style pour le titre (raccord avec l'image) */
+.breathing-card h2 {
+    color: var(--color-secondary);
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    margin: 0 0 10px 0;
+}
+
+/* Style pour le timer (raccord avec l'image) */
+.timer-display {
+    color: var(--color-accent-sun);
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+/* LE CONTENEUR QUI CENTRE LE CERCLE */
+.breathing-circle-container {
+    width: 200px;
+    height: 200px;
+    margin: 20px auto;
+    position: relative; /* RELATIVE pour que le cercle et le texte s'alignent dessus */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* LE CERCLE ANIME */
+.breathing-circle {
+    position: absolute; /* ABSOLUTE pour être indépendant de la hauteur du texte */
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 1px solid var(--color-accent-orange);
+    box-shadow: 0 0 20px rgba(254, 183, 128, 0.1);
+}
+
+/* LE TEXTE AU CENTRE DU CERCLE */
+.phase-text {
+    position: relative; /* Assure d'être au-dessus du cercle */
+    color: var(--color-accent-sun);
+    font-family: 'Lora', serif;
+    font-size: 1.1rem;
+    pointer-events: none; /* N'intercepte pas les clics */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.breathing-controls {
+    margin-top: 30px;
+}
+
+/* Styles pour les boutons EOS existants */
+.start-breath-btn, .stop-breath-btn {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--color-secondary);
+    padding: 8px 25px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.start-breath-btn:hover {
+    background: var(--color-neutral-earth);
+    border-color: var(--color-neutral-earth);
+    color: var(--color-accent-sun);
+}
+
+.stop-breath-btn:hover {
+    background: linear-gradient(135deg, var(--color-accent-orange), var(--color-neutral-earth));
+    border-color: var(--color-accent-orange);
+    color: var(--color-accent-sun);
+}

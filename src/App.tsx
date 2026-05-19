@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-d
 import { useAuth } from "./contexts/AuthContext";
 import LandingPage from "./pages/LandingPage/LandingPage";  
 import Home from "./pages/Home/Home";
-import ResetPasswordPage from "./components/ResetPasswordPage/ResetPasswordPAge";
+import ResetPasswordPage from "./components/ResetPasswordPage/ResetPasswordPage";
 import "./App.css";
 
 function App() {
