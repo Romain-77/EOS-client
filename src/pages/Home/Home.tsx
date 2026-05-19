@@ -114,7 +114,7 @@ const Home = () => {
             </div>
             <div className="mini-games">
               <PatternPopper />
-              <button className="edit-btn" onClick={() => setIsBreathingModalOpen(true)}>
+              <button className="breathing-modal-btn" onClick={() => setIsBreathingModalOpen(true)}>
                 🧘 Prendre une pause respiration
               </button>
             </div>

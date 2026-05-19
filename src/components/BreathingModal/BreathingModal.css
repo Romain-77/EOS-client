@@ -1,5 +1,3 @@
-/* BreathingModal.css */
-
 .breathing-overlay {
     position: fixed;
     top: 0;
@@ -23,51 +21,43 @@
     max-width: 400px;
     text-align: center;
     box-shadow: var(--shadow-soft);
-    position: relative; /* INDISPENSABLE pour que ses enfants absolute soient par rapport à lui */
+    position: relative; 
 }
 
-/* Style pour le bouton "X" de fermeture (raccord avec l'image) */
+.breathing-card .breath {
+    color: var(--color-accent-sun);
+}
+
 .close-button {
     position: absolute;
     top: 15px;
     right: 15px;
     background: none;
     border: none;
-    color: var(--color-accent-orange);
+    color: var(--color-accent-sun);
     font-size: 1.2rem;
     cursor: pointer;
     z-index: 10;
 }
 
-/* Style pour le titre (raccord avec l'image) */
-.breathing-card h2 {
-    color: var(--color-secondary);
-    font-family: 'Playfair Display', serif;
-    font-size: 1.4rem;
-    margin: 0 0 10px 0;
-}
-
-/* Style pour le timer (raccord avec l'image) */
 .timer-display {
     color: var(--color-accent-sun);
     font-size: 1rem;
     margin-bottom: 20px;
 }
 
-/* LE CONTENEUR QUI CENTRE LE CERCLE */
 .breathing-circle-container {
     width: 200px;
     height: 200px;
     margin: 20px auto;
-    position: relative; /* RELATIVE pour que le cercle et le texte s'alignent dessus */
+    position: relative; 
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-/* LE CERCLE ANIME */
 .breathing-circle {
-    position: absolute; /* ABSOLUTE pour être indépendant de la hauteur du texte */
+    position: absolute; 
     width: 120px;
     height: 120px;
     border-radius: 50%;
@@ -75,13 +65,13 @@
     box-shadow: 0 0 20px rgba(254, 183, 128, 0.1);
 }
 
-/* LE TEXTE AU CENTRE DU CERCLE */
+
 .phase-text {
-    position: relative; /* Assure d'être au-dessus du cercle */
+    position: relative;
     color: var(--color-accent-sun);
     font-family: 'Lora', serif;
     font-size: 1.1rem;
-    pointer-events: none; /* N'intercepte pas les clics */
+    pointer-events: none;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
@@ -90,7 +80,6 @@
     margin-top: 30px;
 }
 
-/* Styles pour les boutons EOS existants */
 .start-breath-btn, .stop-breath-btn {
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.2);

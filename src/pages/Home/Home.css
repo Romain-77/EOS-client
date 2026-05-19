@@ -24,16 +24,6 @@
     height: 80px;
 }
 
-/* .logo-small {
-    font-family: 'Playfair Display', serif;
-    font-size: 2rem;
-    font-weight: bold;
-    margin: 0;
-    letter-spacing: 1px;
-    color: var(--color-accent-sun);
-    text-shadow: 0 0 15px rgba(254, 183, 128, 0.3);
-    min-width: 120px;
-} */
 
 .logo-container {
     min-width: 120px;
@@ -100,6 +90,30 @@
     box-shadow: var(--shadow-soft);
 }
 
+.mini-games {
+    display: flex;  
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.breathing-modal-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--color-secondary);
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    transition: all 0.3s ease;
+    width: fit-content;
+    cursor: pointer;
+
+}
+
 .scroll-indicator {
     position: absolute;
     bottom: 30px;
@@ -120,13 +134,6 @@
     50% { opacity: 0.9; transform: translate(-50%, 5px); }
 }
 
-/* .scroll-indicator span {
-    font-size: 0.9rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    font-weight: 400;
-    text-shadow: 0 0 15px rgba(251, 233, 155, 0.2);;
-} */
 
 .mouse {
     width: 20px;

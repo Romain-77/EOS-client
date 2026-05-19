@@ -79,7 +79,7 @@ const BreathingModal = ({ isOpen, onClose }: BreathingModalProps) => {
             <div className="breathing-card">
                 <button className="close-button" onClick={handleClose}>✕</button>
                 
-                <h2>Cohérence Cardiaque</h2>
+                <h2 className="breath">Respiration</h2>
                 <p className="timer-display">{formatTime(timeLeft)}</p>
                 
                 <div className="breathing-circle-container">
