@@ -34,7 +34,7 @@ const WellnessChart = ({ rawData }: {rawData: HistoryData[]}) => {
   });
 
     const categories = Array.from(new Set(rawData.map(item => item.category)));
-    const colors = ["#005782ff", "#6161eaff", "#E6E6FA", "#007BA7"];
+const colors = ["#feb780", "#fbe99b", "#af5862"];
 
 return (
     <section className="chart-section">
