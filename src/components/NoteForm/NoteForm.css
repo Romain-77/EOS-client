@@ -36,6 +36,28 @@
     color: var(--color-secondary);
 }
 
+.inspiration-btn {
+    background: linear-gradient(135deg, var(--color-accent-sun), var(--color-accent-orange));
+    box-shadow: 0 4px 15px rgba(251, 117, 108, 0.4);
+    color: var(--color-secondary);
+    border: var(--color-primary-dark);
+    padding: 12px 25px;
+    border-radius: 30px; 
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.inspiration-btn:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.2);
+}
+
+.inspiration-btn:active {
+    transform: translateY(0);
+    filter: brightness(1);
+}
+
 .input-group {
     display: grid;
     grid-template-columns: 2fr 1fr;

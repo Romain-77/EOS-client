@@ -4,11 +4,22 @@ import type { Category, Note } from "../../interfaces/types";
 import api from "../../services/api";
 import "./NoteForm.css";
 
+const Prompts_Questions = [
+  "Qu'est-ce qui vous a fait sourire aujourd'hui ?",
+  "Quelle est la plus grande leçon que vous avez apprise cette semaine ?",
+  "Citez trois choses pour lesquelles vous êtes reconnaissant.",
+  "Quelle petite victoire avez-vous célébrée aujourd'hui ?",
+  "Comment vous sentez-vous dans votre corps à cet instant précis ?",
+  "Quel obstacle avez-vous surmonté récemment, et qu'est-ce que cela dit de votre force ?",
+  "Si vous pouviez envoyer une pensée bienveillante à votre 'moi' de ce matin, que lui diriez-vous ?"
+];
+
 interface NoteFormProps {
     onNoteAdded: () => void;
     editingNote: Note | null;
     onCancelEdit: () => void;
 }
+
 
 const NoteForm = ({ onNoteAdded, editingNote, onCancelEdit }: NoteFormProps) => {
     const [categories, setCategories] = useState<Category[]>([]);
@@ -55,10 +66,25 @@ const handleSubmit = async (e: React.BaseSyntheticEvent) => {
     }
 };
 
+const handleInspireMe = () => {
+    const randomIndex = Math.floor(Math.random() * Prompts_Questions.length);
+    const randomPrompt = Prompts_Questions[randomIndex];
+    setTitle(randomPrompt);
+}
+
     return (
         <section className="note-form-container">
              <form onSubmit={handleSubmit} className="note-form">
                 <div className="form-header">
+                    <h2>{!editingNote && (
+                        <button
+                        type="button"
+                        className="inspiration-btn"
+                        onClick={handleInspireMe}
+                    >Besoin d'inspiration ?
+                    </button>
+                )}
+                    </h2>
                     <h2>{editingNote ? "Modifier la pensée" : "Nouvelle pensée"}</h2>
                     {editingNote && (
                         <button type="button" className="cancel-btn" onClick={onCancelEdit}>
