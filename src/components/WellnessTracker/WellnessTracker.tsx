@@ -66,7 +66,7 @@ return (
 
                     return (
                         <div key={`tracker-${cat.id}`} className="tracker-item-modern">
-                            <label className="cat-name-modern">{cat.name}</label>
+                            <h4 className="cat-name-modern">{cat.name}</h4>
                             
                             <div className="icons-selection-container">
                                 {options.map((opt) => {

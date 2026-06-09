@@ -94,6 +94,8 @@ const handleInspireMe = () => {
                 </div>    
                 <div className="input-group">
                     <input 
+                    id="note-title"
+                    name="title"
                         type="text" 
                         placeholder="Titre de votre réflexion..." 
                         value={title} 
@@ -103,6 +105,8 @@ const handleInspireMe = () => {
                     />
 
                     <select
+                    id="note-category"
+                    name="categoryId"
                         value={categoryId} 
                         onChange={(e) => setCategoryId(e.target.value)} 
                         required
@@ -116,6 +120,8 @@ const handleInspireMe = () => {
                 </div>    
 
                 <textarea 
+                    id="note-content"
+                    name="content"
                     placeholder="Écrivez ce que vous avez sur le coeur..." 
                     value={content} 
                     onChange={(e) => setContent(e.target.value)} 
