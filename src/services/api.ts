@@ -1,5 +1,5 @@
 import api from "./api.service"; 
-import { CategoryWithStats, Note } from "../interfaces/types";
+import { CategoryWithStats, Note, StreakResponse } from "../interfaces/types";
 
 export const getCategories = async () => {
     const response = await api.get("/categories");
@@ -37,6 +37,11 @@ export const getStatsHistory = async (days: number = 7) => {
 
 export const updateCategoryTarget = async (categoryId: number, target: number): Promise<void> => {
     const response = await api.patch(`/stats/categories/${categoryId}/target`, { target });
+    return response.data;
+};
+
+export const getStreak = async (): Promise<StreakResponse> => {
+    const response = await api.get("/streaks");
     return response.data;
 };
 

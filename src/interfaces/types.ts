@@ -25,3 +25,8 @@ export interface CategoryWithStats extends Category {
     target_score: number;
     currentScore?: number | null;
 }
+
+export interface StreakResponse {
+    currentStreak: number;
+    activeToday: boolean;
+}

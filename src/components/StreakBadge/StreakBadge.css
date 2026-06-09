@@ -1,0 +1,52 @@
+.streak-badge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 6px 16px;
+    border-radius: 20px;
+    user-select: none;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* État : Journée validée */
+.streak-badge.lit {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 15px rgba(254, 183, 128, 0.3);
+}
+
+/* État : Journée non validée */
+.streak-badge.dimmed {
+    opacity: 0.85;
+    border-color: rgba(254, 183, 128, 0.101); 
+}
+
+.streak-emoji {
+    font-size: 1.3rem;
+    display: inline-block;
+    animation: pulseFlame 1.8s infinite alternate ease-in-out; 
+}
+
+.streak-count {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--color-secondary);
+}
+
+.streak-badge.lit .streak-count {
+    color: var(--color-accent-sun, #fbe99b);
+    text-shadow: 0 0 4px rgba(251, 233, 155, 0.4);
+}   
+
+@keyframes pulseFlame {
+    0% {
+        transform: scale(1);
+        filter: drop-shadow(0 0 2px rgba(254, 183, 128, 0.4));
+    }
+    100% {
+        transform: scale(1.22);
+        filter: drop-shadow(0 0 10px rgba(254, 183, 128, 0.8));
+    }
+}

@@ -11,6 +11,7 @@ import WellnessTracker from "../../components/WellnessTracker/WellnessTracker";
 import WellnessChart from "../../components/WellnessChart/WellnessChart";
 import "./Home.css";
 import BreathingModal from "../../components/BreathingModal/BreathingModal";
+import StreakBadge from "../../components/StreakBadge/StreakBadge";
 
 const Home = () => {
     const [notes, setNotes] = useState<Note[]>([]);
@@ -97,15 +98,24 @@ const Home = () => {
 
   return (
       <div className="home-page">
-        <header className="home-header">
-          <div className="header-content">
-            <div className="logo-container">
-              <img src={logoEOS} alt="EOS logo" className="logo-img" />
-            </div>
-            <p className="welcome-text">Bienvenue, {user?.username}</p>
-            <button className="logout-btn" onClick={logout}>Déconnexion</button>
-          </div>
-        </header>
+<header className="home-header">
+  <div className="header-content">
+    
+    <div className="logo-container">
+      <img src={logoEOS} alt="EOS logo" className="logo-img" />
+    </div>
+    
+    <div className="welcome-wrapper">
+      <p className="welcome-text">Bienvenue, {user?.username}</p>
+      <StreakBadge />
+    </div>
+    
+    <div className="actions-container">
+      <button className="logout-btn" onClick={logout}>Déconnexion</button>
+    </div>
+
+  </div>
+</header>
 
         <main className="home-container">
           <section className="dashboard-top">
