@@ -79,7 +79,33 @@
 }
 
 @media (max-width: 450px) {
+    .tracker-title {
+        font-size: 1.4rem;
+    }
+
+    .tracker-grid {
+        gap: 16px;
+    }
+
+    .cat-name-modern {
+        font-size: 1rem;
+    }
+
     .icons-selection-container {
         grid-template-columns: repeat(2, 1fr);
+        gap: 8px; 
+    }
+
+    .icon-capsule {
+        padding: 10px 4px;
+        border-radius: 12px;
+    }
+
+    .icon-emoji {
+        font-size: 1.3rem; 
+    }
+
+    .icon-label {
+        font-size: 0.7rem;
     }
 }

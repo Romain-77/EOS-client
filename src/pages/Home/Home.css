@@ -1,6 +1,7 @@
 .home-page {
     background: var(--bg-home);
     min-height: 100vh;
+    overflow-x: hidden;
 }
 
 .home-header {
@@ -32,7 +33,7 @@
 }
 
 .logo-img {
-    height: 90px;
+    height: 80px;
     width: auto;
     object-fit: contain;
 }
@@ -41,14 +42,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 16px; 
+    gap: 12px; 
     flex: 2; 
 }
 
 .welcome-text {
-    position: static;
-    margin: 0 auto;
-    transform: none;
     font-family: 'Lora', sans-serif;
     font-size: 1.7rem;
     font-weight: 500;
@@ -107,8 +105,7 @@
 .mini-games {
     display: flex;  
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 20px;
 }
 
@@ -118,18 +115,20 @@
     justify-content: center;
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.2);
-    padding: 40px 40px;
+    padding: 40px; 
     border-radius: 20px;
     transition: all 0.3s ease;
-    width: fit-content;
+    width: 100%; 
     cursor: pointer;
     box-shadow: var(--shadow-soft);
+    box-sizing: border-box; 
 }
+
 .breathing-modal-btn h3 {
     font-size: 1.2rem;
     text-align: center;
     font-weight: 300;
-    margin-bottom: 25px;
+    margin: 0; 
     color: var(--color-secondary);
 }
 
@@ -291,6 +290,56 @@ select {
     outline: none;
 }
 
-@media (max-width: 900px) {
-    .dashboard-top { grid-template-columns: 1fr; }
+
+@media (max-width: 768px) {
+
+    .home-container {
+        padding: 16px 12px; 
+        gap: 20px;
+    }
+
+    .header-content {
+        height: 70px;
+        padding: 0 8px; /* On resserre au maximum les bords */
+    }
+
+    .logo-container {
+        flex: 0 0 auto; /* Le logo ne prend que la place dont il a besoin */
+    }
+
+    .logo-img {
+        height: 45px; /* Un poil plus petit pour l'iPhone SE */
+    }
+
+    .welcome-wrapper {
+        flex: 1; /* Prend l'espace central disponible */
+        gap: 6px; 
+        justify-content: center;
+    }
+
+    .welcome-text {
+        font-size: 0.95rem; /* Ajusté pour que "Bienvenue, Romain" tienne sans forcer */
+    }
+
+    .streak-badge {
+        padding: 4px 8px;
+        gap: 2px;
+    }
+
+    .streak-count {
+        font-size: 0.85rem;
+    }
+
+    .actions-container {
+        flex: 0 0 auto; /* Le bouton déconnexion ne pousse pas les autres */
+    }
+
+    .logout-btn {
+        padding: 6px 10px;
+        font-size: 0.7rem;
+    }
+    .dashboard-top { 
+        grid-template-columns: 1fr; 
+        gap: 16px;
+    }
 }

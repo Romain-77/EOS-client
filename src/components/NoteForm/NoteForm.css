@@ -139,7 +139,56 @@ min-height: 120px;
 }
 
 @media (max-width: 600px) {
+    .note-form-container {
+        padding: 16px; 
+        border-radius: 16px;
+    }
+
+    .form-header {
+        flex-direction: column;
+        gap: 12px;
+        align-items: flex-start;
+    }
+
+    .form-header h2 {
+        font-size: 1.2rem;
+    }
+
+    .inspiration-btn {
+        width: 100%;
+        text-align: center;
+        padding: 10px 16px;
+        font-size: 0.9rem;
+    }
+
     .input-group {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; 
+        gap: 10px;
+    }
+
+    .note-input-title, .note-select, .note-textarea {
+        padding: 10px 14px;
+        font-size: 0.95rem;
+    }
+
+    .note-form-footer {
+        width: 100%;
+    }
+
+    .note-form-btns {
+        flex-direction: column-reverse;
+        width: 100%;
+        gap: 10px;
+    }
+
+    .submit-note-btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .cancel-pill {
+        width: 100%;
+        text-align: center;
+        padding: 8px 0;
     }
 }

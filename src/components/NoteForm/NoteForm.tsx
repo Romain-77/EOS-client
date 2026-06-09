@@ -76,6 +76,12 @@ const handleInspireMe = () => {
         <section className="note-form-container">
              <form onSubmit={handleSubmit} className="note-form">
                 <div className="form-header">
+                    <h2>{editingNote ? "Modifier la pensée" : "Nouvelle pensée"}</h2>
+                    {editingNote && (
+                        <button type="button" className="cancel-btn" onClick={onCancelEdit}>
+                            Annuler
+                        </button>
+                    )}
                     <h2>{!editingNote && (
                         <button
                         type="button"
@@ -85,12 +91,6 @@ const handleInspireMe = () => {
                     </button>
                 )}
                     </h2>
-                    <h2>{editingNote ? "Modifier la pensée" : "Nouvelle pensée"}</h2>
-                    {editingNote && (
-                        <button type="button" className="cancel-btn" onClick={onCancelEdit}>
-                            Annuler
-                        </button>
-                    )}
                 </div>    
                 <div className="input-group">
                     <input 

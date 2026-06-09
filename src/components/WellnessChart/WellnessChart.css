@@ -74,3 +74,24 @@
     margin-left: 8px;
     text-transform: capitalize;
 }
+
+@media (max-width: 768px) {
+    .chart-section {
+        padding: 16px 10px;
+        margin-top: 1rem;
+    }
+
+    .chart-title-unique {
+        font-size: 1.3rem;
+    }
+
+    .chart-wrapper {
+        height: 260px; 
+        margin: 10px 0;
+    }
+
+    .recharts-legend-item-text {
+        font-size: 0.85rem;
+        font-weight: 700;
+    }
+}

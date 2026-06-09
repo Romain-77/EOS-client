@@ -5,7 +5,9 @@
     padding: 25px;
     text-align: center;
     box-shadow: var(--shadow-soft);
-    max-width: fit-content;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
     margin: 0 auto;
 }
 
@@ -117,4 +119,33 @@ background: var(--gradient-pop);
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 480px) {
+    .popper-container {
+        padding: 16px;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .popper-container h3 {
+        font-size: 1.3rem;
+        margin-bottom: 16px;
+    }
+
+    .bubble-grid {
+        grid-template-columns: repeat(6, 32px); 
+        gap: 8px; 
+        padding: 4px;
+    }
+
+    .bubble {
+        width: 32px;
+        height: 32px;
+    }
+
+    .affirmations p {
+        font-size: 0.9rem;
+    }
 }
